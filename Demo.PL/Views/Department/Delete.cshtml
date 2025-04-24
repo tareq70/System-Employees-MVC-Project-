@@ -1,0 +1,25 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4 style="color: red;">⚠ Are you sure you want to delete @Model.Name? This action cannot be undone! ⚠</h4>
+<br />
+<div asp-validation-summary="All"></div>
+<form asp-action="Delete">
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Code"></label>
+        <input readonly class="form-control" asp-for="Code" />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Name"></label>
+        <input readonly class="form-control" asp-for="Name" />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="CreationOfDate"></label>
+        <input readonly class="form-control" asp-for="CreationOfDate" />
+    </div>
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+

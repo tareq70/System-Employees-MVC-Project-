@@ -1,0 +1,18 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Create">
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="RoleName"></label>
+        <input class="form-control" asp-for="RoleName" />
+        <span asp-validation-for="RoleName" class="text-danger"></span>
+    </div>
+   
+
+    <input type="submit" value="submit" class="btn btn-primary" />
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+</form>

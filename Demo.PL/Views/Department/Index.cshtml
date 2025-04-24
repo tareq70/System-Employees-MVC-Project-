@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Department>
+@{
+    ViewData["Title"] = "All Department";
+}
+@if(TempData["message"] is not null)
+    {
+    <div id="tempMessage" class="alert alert-success">
+            @TempData["message"]
+        </div>        
+    }
+<br /> 
+
+<a asp-action="create" class="btn btn-success">Create New Department</a>
+<br />
+@if (Model.Count() > 0)
+{
+    <h1>All Department</h1>
+    <table class=" table table-striped table-hover mt-3">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(D=>D.Code)</td>
+                <td>@Html.DisplayNameFor(D=>D.Name)</td>
+                <td>@Html.DisplayNameFor(D=>D.CreationOfDate)</td>
+                <td>Details</td>
+                <td>Update</td>
+                <td>Delete</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var department in Model)
+            {
+                <tr>
+                    <td>@department.Code</td>
+                    <td>@department.Name</td>
+                    <td>@department.CreationOfDate</td>
+                    <partial name="_ButtonsPartialView" model="@department.Id.ToString()" />
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="mt-5 alert alert-warning">
+        <h3>There is no departments</h3>
+    </div>
+}
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#tempMessage").fadeOut("slow");
+            }, 3000);
+        });
+    </script>
+
+}
