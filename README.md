@@ -34,14 +34,19 @@ The Employee Management System is a web application built with ASP.NET MVC. It e
 ---
 
 ## Project Structure
-EmployeeSystem/
-├── Controllers/
-├── Models/
-├── Views/
-│ ├── Shared/
-│ ├── Employee/
-│ └── Department/
-├── DataAccess/
-├── Services/
-├── wwwroot/
-└── Program.cs / Startup.cs
+
+EmployeeSystem  
+│  
+├── Controllers/              # Contains all controller classes (e.g., EmployeeController)  
+├── Models/                   # Contains domain models (e.g., Employee, Department)  
+├── Views/                    # Contains Razor views  
+│   ├── Shared/               # Layout files and shared views  
+│   ├── Employee/             # Views related to Employee module  
+│   └── Department/           # Views related to Department module  
+├── DataAccess/               # EF Core DbContext and configurations  
+├── Services/                 # Business logic and service implementations  
+├── wwwroot/                  # Static files like CSS, JS, images  
+├── appsettings.json          # Application configuration file  
+├── Program.cs                # Main entry point of the application  
+└── Startup.cs                # Configures services and middleware  
+
