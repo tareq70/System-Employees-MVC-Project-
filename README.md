@@ -33,35 +33,27 @@ The Employee Management System is a web application built with ASP.NET MVC. It e
 
 ---
 
-## Project Structure
+## Project Structure (3-Tier Architecture)
 
 ```
 EmployeeSystem/
-├── Core/                            # Contains core logic (interfaces, models, DTOs)
-│   ├── Interfaces/                 # Service and repository interfaces
-│   ├── DTOs/                       # Data Transfer Objects
-│   └── Models/                     # Domain models (e.g., Employee, Department)
+├── Presentation/                   # UI Layer (Handles user interaction)
+│   ├── Controllers/               # API or MVC Controllers
+│   └── Views/                     # Razor Views (if applicable)
 
-├── Infrastructure/                 # Database access and implementation
-│   ├── Data/                       # EF Core DbContext and seeding
-│   │   └── ApplicationDbContext.cs
-│   ├── Repositories/              # Repository implementations
-│   └── Migrations/                # EF Core migration files
+├── BusinessLogic/                 # Business Logic Layer (Core application logic)
+│   ├── Interfaces/               # Service Interfaces
+│   ├── Services/                 # Service Implementations
+│   └── DTOs/                     # Data Transfer Objects
 
-├── Services/                       # Business logic and service classes
-│   └── EmployeeService.cs
+├── DataAccess/                    # Data Access Layer (Database interaction)
+│   ├── Models/                   # Domain Models (e.g., Employee, Department)
+│   ├── Context/                  # EF Core DbContext
+│   └── Repositories/            # Repository Interfaces & Implementations
 
-├── Presentation/                   # UI and API layers
-│   ├── Controllers/               # API Controllers (e.g., EmployeeController)
-│   └── Views/                     # Razor Views
-│       ├── Shared/
-│       ├── Employee/
-│       └── Department/
+├── wwwroot/                       # Static web assets (CSS, JS, Images)
 
-├── wwwroot/                        # Static files (CSS, JS, Images)
-
-├── appsettings.json                # Application configuration
-├── Program.cs                      # App entry point
-└── Startup.cs                      # Middleware and service configuration
+├── appsettings.json               # Configuration file
+├── Program.cs                     # App entry point
+└── Startup.cs                     # Services & middleware configuration
 ```
-
