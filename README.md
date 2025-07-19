@@ -37,23 +37,21 @@ The Employee Management System is a web application built with ASP.NET MVC. It e
 
 ```
 EmployeeSystem/
-├── Presentation/                   # UI Layer (Handles user interaction)
-│   ├── Controllers/               # API or MVC Controllers
-│   └── Views/                     # Razor Views (if applicable)
+├── Demo.PL/                      # Presentation Layer
+│   ├── Controllers/             # API Controllers
+│   ├── Views/                   # UI Views (if applicable)
+│   └── Program.cs               # Application startup
 
-├── BusinessLogic/                 # Business Logic Layer (Core application logic)
-│   ├── Interfaces/               # Service Interfaces
-│   ├── Services/                 # Service Implementations
-│   └── DTOs/                     # Data Transfer Objects
+├── BLL/                          # Business Logic Layer
+│   ├── Services/                # Business services
+│   ├── Interfaces/              # Service interfaces
+│   └── DTOs/                    # Data transfer objects
 
-├── DataAccess/                    # Data Access Layer (Database interaction)
-│   ├── Models/                   # Domain Models (e.g., Employee, Department)
-│   ├── Context/                  # EF Core DbContext
-│   └── Repositories/            # Repository Interfaces & Implementations
+├── DAL/                          # Data Access Layer
+│   ├── Context/                 # EF Core DbContext
+│   ├── Repositories/           # Repository interfaces and implementations
+│   └── Models/                 # Database models / Entities
 
-├── wwwroot/                       # Static web assets (CSS, JS, Images)
-
-├── appsettings.json               # Configuration file
-├── Program.cs                     # App entry point
-└── Startup.cs                     # Services & middleware configuration
+├── appsettings.json              # App configuration
+└── README.md                     # Project documentation
 ```
